@@ -5,13 +5,12 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
-		int j = 0;
+		int j = a /4;
 		String lo = "long ";
-		 j = a / 4;
-		/*
-		 * for(int i=4; i<=a; i++) { j = a / i; }
-		 */
-		System.out.print(lo.repeat(j)+ "int");
+		for(int i=0; i<j; i++) {
+			System.out.print(lo);
+		}
+		System.out.print("int");
 		
 	}
 }
