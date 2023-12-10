@@ -1,22 +1,27 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Main {
 	 public static void main(String[] args) throws Exception {
-		 Scanner scanner = new Scanner(System.in);
+		 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		 BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		 int[][] paper = new int[100][100];
-		 int count = scanner.nextInt();
+		 int count = Integer.parseInt(br.readLine());
 			
 		 // count 수 만큼 입력받기
 		 for (int i = 0; i < count; i++) {
-			  int a = scanner.nextInt(); // 열 가로
-			  int b = scanner.nextInt(); // 행 세로
-			  for (int j = a; j < a + 10; j++) {
-			  // 사각형 부분에 1을 넣어주기
-				  for (int k = b; k < b + 10; k++) {
-			           paper[k][j] = 1;
-				  }
-			  }
+			 String input[] = br.readLine().split(" ");
+			 int a = Integer.parseInt(input[0]); // 열 가로
+			 int b = Integer.parseInt(input[1]); // 행 세로
+			 for (int j = a; j < a + 10; j++) {
+			 // 사각형 부분에 1을 넣어주기
+				 for (int k = b; k < b + 10; k++) {
+			          paper[k][j] = 1;
+				 }
+			 }
 			
 		 }
 			
@@ -29,6 +34,9 @@ public class Main {
 			      }
 			 }
 		}
-		System.out.println(res);
+		bw.write(Integer.toString(res)); // 값 할당
+		bw.flush(); //출력
+		br.close(); //종료
+		bw.close(); //종료
 	 }
 }
